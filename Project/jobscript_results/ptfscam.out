@@ -1,0 +1,50 @@
+### Starting TaskPrologue of job 3161571 on f0837 at Fri Dec 19 20:30:52 CET 2025
+#   SLURM_JOB_NODELIST=f0837
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=
+#   SLURM_NPROCS=
+#   SLURM_TASKS_PER_NODE=72
+#   SLURM_JOB_CPUS_PER_NODE=72
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 0-71 with governor powersave
+### Finished TaskPrologue
+NOTE: If and ONLY IF you want to use likwid-perfctr you have to add '--constraint=hwperf' to your batch jobs.
+      likwid-features and likwid-setFrequencies are not available. The frequency/governor can be set using SLURM features.
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Iinclude -fp-model=precise -o test_test.o src/test.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Iinclude -fp-model=precise -o Grid_test.o src/Grid.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Iinclude -fp-model=precise -o PDE_test.o src/PDE.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Iinclude -fp-model=precise -o Solver_test.o src/Solver.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Iinclude -fp-model=precise -o timer_test.o src/timer.cpp
+icpx -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -fp-model=precise -o test test_test.o Grid_test.o PDE_test.o Solver_test.o timer_test.o -lstdc++fs  
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Wno-tautological-constant-compare -Iinclude src/perf.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Wno-tautological-constant-compare -Iinclude src/Grid.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Wno-tautological-constant-compare -Iinclude src/PDE.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Wno-tautological-constant-compare -Iinclude src/Solver.cpp
+icpx -c -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Wno-tautological-constant-compare -Iinclude src/timer.cpp
+icpx -std=c++0x -Wall -Winline -Wshadow -W -O3 -qopenmp -xHOST -Wno-tautological-constant-compare   -Wno-tautological-constant-compare -o perf perf.o Grid.o PDE.o Solver.o timer.o -lstdc++fs  
+All runs completed.
+=== JOB_STATISTICS ===
+=== current date     : Fri Dec 19 20:36:09 CET 2025
+= Job-ID             : 3161571 on fritz
+= Job-Name           : ptfscam
+= Job-Command        : /home/hpc/ptfs/ptfs270h/PTfS-CAM-Project/ptfscam.sh
+= Initial workdir    : /home/hpc/ptfs/ptfs270h/PTfS-CAM-Project
+= Queue/Partition    : singlenode
+= Slurm account      : ptfs with QOS=ptfs
+= Features           : hwperf
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:05:19
+= Total RAM usage    : 24.0 GiB 
+= Node list          : f0837
+= Subm/Elig/Start/End: 2025-12-19T20:30:48 / 2025-12-19T20:30:48 / 2025-12-19T20:30:50 / 2025-12-19T20:36:09
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc               6.4G   104.9G   209.7G        N/A  25,450      500K   1,000K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
+=== Network traffic stats (does not include Infiniband) ======
+= HPC internal traffic (e.g. to fileservers): 0 GB in / 0 GB out
+= External traffic: 0 GB in / 0 GB out
+======================

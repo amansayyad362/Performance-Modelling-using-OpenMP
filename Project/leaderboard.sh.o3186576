@@ -1,0 +1,42 @@
+### Starting TaskPrologue of job 3186576 on f1255 at Wed Jan  7 16:33:29 CET 2026
+#   SLURM_JOB_NODELIST=f1255
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=
+#   SLURM_NPROCS=
+#   SLURM_TASKS_PER_NODE=72
+#   SLURM_JOB_CPUS_PER_NODE=72
+#   SLURM_EXPORT_ENV=
+Running on cores 0-71 with governor powersave
+### Finished TaskPrologue
+Always call this script with exactely two arguemnts, even if they are empty ("").
+
+	./leaderboard.sh "FIRST" "SECOND"
+
+Then, it will be executed:
+
+	 FIRST srun -cpu-freq=2000000-2000000:performance SECOND ./perf y x
+
+=== JOB_STATISTICS ===
+=== current date     : Wed Jan  7 16:33:31 CET 2026
+= Job-ID             : 3186576 on fritz
+= Job-Name           : leaderboard.sh
+= Job-Command        : /home/hpc/ptfs/ptfs270h/PTfS-CAM-Project/leaderboard.sh
+= Initial workdir    : /home/hpc/ptfs/ptfs270h/PTfS-CAM-Project
+= Queue/Partition    : singlenode
+= Slurm account      : ptfs with QOS=ptfs
+= Requested resources:  for 00:10:00
+= Elapsed runtime    : 00:00:01
+= Total RAM usage    : 0.0 GiB 
+= Node list          : f1255
+= Subm/Elig/Start/End: 2026-01-07T16:33:28 / 2026-01-07T16:33:28 / 2026-01-07T16:33:29 / 2026-01-07T16:33:30
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc               6.4G   104.9G   209.7G        N/A  25,450      500K   1,000K        N/A    
+    /lustre                 4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
+=== Network traffic stats (does not include Infiniband) ======
+= HPC internal traffic (e.g. to fileservers): 0 GB in / 0 GB out
+= External traffic: 0 GB in / 0 GB out
+======================
